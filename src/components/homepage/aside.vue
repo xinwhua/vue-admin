@@ -58,12 +58,12 @@ export default {
               title: "系统首页",
               icon: "el-icon-document"
             },
-            {
-              page: true,
-              path: "test01",
-              title: "test01页",
-              icon: "el-icon-document"
-            }
+            // {
+            //   page: true,
+            //   path: "test01",
+            //   title: "test01页",
+            //   icon: "el-icon-document"
+            // }
           ]
         },
         {
@@ -78,7 +78,32 @@ export default {
               icon: "el-icon-document"
             }
           ]
-        }
+        },
+        {
+          icon: "el-icon-tickets",
+          path: "p_management",
+          title: "用户管理",
+          subs: [
+            {
+              page: true,
+              path: "management",
+              title: "用户管理-确认充值",
+              icon: "el-icon-document"
+            }
+          ]
+        },{
+          icon: "el-icon-tickets",
+          path: "p_order",
+          title: "订单管理",
+          subs: [
+            {
+              page: true,
+              path: "order",
+              title: "导出报表",
+              icon: "el-icon-document"
+            }
+          ]
+        },
       ]
     };
   },

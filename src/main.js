@@ -8,7 +8,9 @@ Vue.config.productionTip = false
 //包引用------start
 //0.引入babel-polyfill,兼容Ie,将es6转为es5
 import 'babel-polyfill'
-
+import Avue from '@smallwei/avue';
+import '@smallwei/avue/lib/index.css';
+Vue.use(Avue);
 
 //1.引入element-ui
 import ElementUI from 'element-ui'

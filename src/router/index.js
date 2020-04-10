@@ -50,7 +50,23 @@ const router = new Router({
             title: 'tablepage页',
             role: ['王者岗', '白银岗','黄金岗']
           }
-        },
+        },{
+          path: '/management',
+          name: 'management',
+          component: () => import('@/components/management/management'),
+          meta: {
+            title: 'management页',
+            role: ['王者岗', '白银岗','黄金岗']
+          }
+        },{
+          path: '/order',
+          name: 'order',
+          component: () => import('@/components/order/order'),
+          meta: {
+            title: 'order',
+            role: ['王者岗', '白银岗','黄金岗']
+          }
+        }
       ]
     },
     {
