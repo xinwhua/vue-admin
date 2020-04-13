@@ -5,7 +5,7 @@
     <div class="login_inner">
       <el-form class="form" ref="form" :model="formLogin">
         <el-form-item>
-          <h2 class="title">知识库管理系统</h2>
+          <h2 class="title">企业餐行政管理后台</h2>
         </el-form-item>
         <el-form-item>
           <el-input v-model="formLogin.loginName" placeholder="账号"></el-input>
@@ -14,7 +14,7 @@
           <el-input v-model="formLogin.password" placeholder="密码"></el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="primary" @click="login">登陆</el-button>
+          <el-button type="primary" @click="login">登录</el-button>
           <div v-show="this.errorInfo.isShowError" class="error">{{this.errorInfo.text}}</div>
         </el-form-item>
       </el-form>
@@ -71,7 +71,7 @@ export default {
         document.onkeydown = (event) => {
             var router=this.$route.path;
             var e = event || window.event || arguments.callee.caller.arguments[0];
-            if (e && e.keyCode == 13&&this.$route.path=='/login') { // enter 键 
+            if (e && e.keyCode == 13&&this.$route.path=='/login') { // enter 键
                 this.login();
             }
         };

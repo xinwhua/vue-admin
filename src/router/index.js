@@ -2,6 +2,19 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import axios from 'axios'
 
+import login from '@/components/login';
+import homepage from '@/components/homepage/homepage';
+import HelloWorld from '@/components/test/HelloWorld';
+import tablepage from '@/components/tablepage/tablepage';
+import management from '@/components/management/management';
+import order from '@/components/order/order';
+import operation from '@/components/operation/operation';
+import setting from '@/components/setting/setting';
+
+
+// import 404 from '@/components/homepage/404';
+
+
 Vue.use(Router)
 
 const router = new Router({
@@ -13,20 +26,16 @@ const router = new Router({
     {
       name: 'login',
       path: '/login',
-      component: () => import('@/components/login.vue'),
-      meta: { title: '登录页' }
+      component:login,
     },
     {
       path: '/home',
-      component: () => import('@/components/homepage/homepage.vue'),
-      meta: {
-        title: '母版页'
-      },
+      component: homepage,
       children: [
         {
           path: '/index',
           name: '系统首页',
-          component: () => import('@/components/test/HelloWorld'),
+          component: HelloWorld,
           meta: {
             title: '系统首页',
             hideclose: true,
@@ -34,39 +43,48 @@ const router = new Router({
           }
         },
         {
-          path: '/test01',
-          name: 'test01',
-          component: () => import('@/components/test/test01'),
-          meta: {
-            title: 'test01页',
-            role: ['白银岗']
-          }
-        },
-        {
           path: '/tablepage',
           name: 'tablepage',
-          component: () => import('@/components/tablepage/tablepage'),
+          component: tablepage,
           meta: {
-            title: 'tablepage页',
+            title: '充值记录',
             role: ['王者岗', '白银岗','黄金岗']
           }
         },{
           path: '/management',
           name: 'management',
-          component: () => import('@/components/management/management'),
+          component: management,
           meta: {
-            title: 'management页',
+            title: '用户管理',
             role: ['王者岗', '白银岗','黄金岗']
           }
         },{
           path: '/order',
           name: 'order',
-          component: () => import('@/components/order/order'),
+          component: order,
           meta: {
-            title: 'order',
+            title: '订单管理',
+            role: ['王者岗', '白银岗','黄金岗']
+          }
+        },{
+          path: '/operation',
+          name: 'operation',
+          component: operation,
+          meta: {
+            title: '操作日志',
+            role: ['王者岗', '白银岗','黄金岗']
+          }
+        },{
+          path: '/setting',
+          name: 'setting',
+          component: setting,
+          meta: {
+            title: '设置',
             role: ['王者岗', '白银岗','黄金岗']
           }
         }
+
+
       ]
     },
     {
